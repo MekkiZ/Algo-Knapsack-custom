@@ -1,0 +1,42 @@
+Pseudo-Code algorithme
+
+
+algoOpti
+Variable
+	Matrice -> 0
+	capicite -> 500
+	element -> longeur(element)
+	element_selection = liste vide
+	e <- parcour list element à l'envers
+	element_sum -> list vide
+	element_sum_profit -> list vide
+debut
+
+	Matrice crée init -> 0 rajout +1 pour rajout de ligne
+	Tant pour i la longueur des element
+	Tant pour w parcours la capacite donnée
+		Si la valeur est infereiru a la capacite donnée:
+			Rajout dans la Matrice le max entre l'élémenet courant + elment trouver optimiser 
+			(on garde meilleur resultat)
+	Sinon:
+		On garde garde la valuer par default de la lgine d'avant
+
+Tant que la capicite >= 0 ou n >= 0:
+
+		Si la denrier valeur est egale la valeur de l'element optimiser audessus max:
+			
+			Rajout des èelement dans la list vide 
+			sosutraction de la valeur de l'element
+		
+		Passe à l'élément suivant
+
+Pour i dans la list_element:
+	Rajout la valeur des elements dans la une liste vide
+	calculer la somme la valeur des elements diviser 100 pour remettre les virgules
+	rajout le profit des elements choisie plus haut dans une list vide
+	Calculer la somme des profits
+	
+Fin
+			
+			
+	

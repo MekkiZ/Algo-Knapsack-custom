@@ -1,5 +1,6 @@
+"""System module"""
 import pandas as pd
-import csv
+from tabulate import tabulate
 import math
 
 
@@ -24,12 +25,13 @@ def get_file_data(file):
 # Solution optimale - programmation dynamique
 def sac_dos_dynamique(capacite, elements):
     """
-    This function is a algorithm knapsack for finance.
+    This function is an algorithm knapsack for finance.
     :param capacite: It's determinate by the user, here we use 50000 cents ( 500 eu ).
     :param elements: We take with the first function the data .
     :return: A list with sum of price and profit and tuples contains all information of data took.
     """
-    matrice = [[0 for x in range(capacite + 1)] for x in range(len(elements) + 1)]
+
+    matrice = [[0 for _ in range(capacite + 1)] for _ in range(len(elements) + 1)]
     for i in range(1, len(elements), 1):
         for w in range(1, capacite + 1):
             if elements[i - 1][1] <= w:
@@ -54,10 +56,26 @@ def sac_dos_dynamique(capacite, elements):
         result_sum = float((math.fsum(element_sum)) // 100)
         element_sum_profit.append(i[2])
         result_sum_profit = float(math.fsum(element_sum_profit))
+
     return result_sum_profit, result_sum, elements_selection
 
 
+def traite_data():
+    """
+    This function traite all final data for good front
+    :return: None
+    """
+    list_sum = []
+    data = sac_dos_dynamique(50000, v)
+    columns = ["nom de l'action", "prix", "profit"]
+    action_traite = data[2]
+    print(tabulate(action_traite, headers=columns))
+    columns_sum = ["total des bénéfice", " Total du prix"]
+    sum_action = str(data[0]), str(data[1])
+    list_sum.append(sum_action)
+    print(tabulate(list_sum, headers=columns_sum))
 
-v = get_file_data("datacsv2.csv")
-print(sac_dos_dynamique(50000, v))
 
+if __name__ == "__main__":
+    v = get_file_data("datacsv.csv")
+    print(traite_data())
