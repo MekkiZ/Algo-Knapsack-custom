@@ -46,4 +46,6 @@ def sac_a_dos_force_brute(capacite, elements, elements_selection=[]):
 
 sys.setrecursionlimit(2000)
 
-print(sac_a_dos_force_brute(500, Data))
+
+if __name__ == "__main__":
+    print(sac_a_dos_force_brute(500, Data))
