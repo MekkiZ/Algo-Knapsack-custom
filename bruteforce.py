@@ -25,10 +25,12 @@ Data = [('Action-1', 20, 5),
         ]
 
 
-def sac_a_dos_force_brute(capacite, elements, elements_selection=[]):
+def sac_a_dos_force_brute(capacite, elements, elements_selection=None):
     # We use a recursive function, we have to show stop point. With this point with verify if you have elements,
     # if we have no element to traite. and we return the sum with element took
 
+    if elements_selection is None:
+        elements_selection = []
     if elements:
 
         # So if we have element in list, with call recursively the function
@@ -41,10 +43,10 @@ def sac_a_dos_force_brute(capacite, elements, elements_selection=[]):
 
         return val1, lstVal1
     else:
-        return sum([i[2] for i in elements_selection]), elements_selection
+        return sum([i[1]for i in elements_selection]), elements_selection
 
 
-sys.setrecursionlimit(2000)
+sys.setrecursionlimit(20000)
 
 
 if __name__ == "__main__":
