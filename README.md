@@ -16,3 +16,7 @@ or for optimize algo:
 ```
 python3 algo_opti.py
 ```
+
+## More about this algo
+
+The algo is more better of original algo, because, on this algo the float numbers is the limit , here we can use float number or integer.
